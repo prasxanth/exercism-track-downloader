@@ -3,7 +3,7 @@
 `exercism-track-downloader` is a small Clojure (Java) CLI application to download all exercises for track(s) from [exercism.org](https://exercism.org/).
 
 ```sh
-exercism-track-downloader-1.0-standalone.jar [args]
+exercism-track-downloader.jar [args]
 ```
 
 Examples are provided in the [usage](#usage) section.
@@ -12,7 +12,7 @@ Examples are provided in the [usage](#usage) section.
 
 + [Exercim's CLI](https://exercism.org/docs/using/solving-exercises/working-locally) application must be installed as it used to retrieve the exercises.
 
-+ Exercises must be /unlocked/ to be /downloaded/. Locked exercises cannot be downloaded.
++ Exercises must be *unlocked* to be *downloaded*. Locked exercises cannot be downloaded.
 
 + All data is retrieved directly from website on each run so an internet connection is required.
 
@@ -25,13 +25,13 @@ Alternatively, Clojure developers can use the code or library  (`target/uberjar/
 
 ## Usage
 
-To execute commands below, copy-paste them to your terminal and remove the leading `!` character.
+Execute commands below from within the root directory. Copy-paste them to your terminal and remove the leading `!` character. Note that `exercism-track-downloader.jar` is symlinked to `target/uberjar/exercism-track-downloader-1.0-standalone.jar`.
 
 ### Help
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar --help
+!java -jar exercism-track-downloader.jar --help
 ```
 
     NAME:
@@ -58,7 +58,7 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks --help
+!java -jar exercism-track-downloader.jar tracks --help
 ```
 
     NAME:
@@ -86,74 +86,28 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks --list
+!java -jar exercism-track-downloader.jar --list
 ```
 
+    ** ERROR: **
+    Global option error: Unknown option: "--list"
     
-    Retrieving tracks from https://exercism.io/tracks
     
+    NAME:
+     exercism-track-downloader - Application to download all exercises from Exercism for any track(s).
     
-    |           :slug |           :lang |
-    |-----------------+-----------------|
-    |            abap |            ABAP |
-    |             awk |             AWK |
-    |            bash |            Bash |
-    |               c |               C |
-    |            cfml |            CFML |
-    |         clojure |         Clojure |
-    |   clojurescript |   ClojureScript |
-    |    coffeescript |    CoffeeScript |
-    |     common-lisp |     Common Lisp |
-    |             cpp |             C++ |
-    |         crystal |         Crystal |
-    |          csharp |              C# |
-    |               d |               D |
-    |            dart |            Dart |
-    |          delphi |   Delphi Pascal |
-    |          elixir |          Elixir |
-    |             elm |             Elm |
-    |      emacs-lisp |      Emacs Lisp |
-    |          erlang |          Erlang |
-    |         fortran |         Fortran |
-    |          fsharp |              F# |
-    |              go |              Go |
-    |          groovy |          Groovy |
-    |         haskell |         Haskell |
-    |            java |            Java |
-    |      javascript |      JavaScript |
-    |           julia |           Julia |
-    |          kotlin |          Kotlin |
-    |             lfe |             LFE |
-    |             lua |             Lua |
-    |            mips |   MIPS Assembly |
-    |             nim |             Nim |
-    |     objective-c |     Objective-C |
-    |           ocaml |           OCaml |
-    |           perl5 |          Perl 5 |
-    | pharo-smalltalk |           Pharo |
-    |             php |             PHP |
-    |           plsql |          PL/SQL |
-    |          prolog |          Prolog |
-    |      purescript |      PureScript |
-    |          python |          Python |
-    |               r |               R |
-    |          racket |          Racket |
-    |            raku |            Raku |
-    |        reasonml |        ReasonML |
-    |            ruby |            Ruby |
-    |            rust |            Rust |
-    |           scala |           Scala |
-    |          scheme |          Scheme |
-    |             sml |     Standard ML |
-    |           swift |           Swift |
-    |             tcl |             Tcl |
-    |      typescript |      TypeScript |
-    |          unison |          Unison |
-    |           vbnet |          VB.NET |
-    |       vimscript |      Vim script |
-    |            wasm |     WebAssembly |
-    |            wren |            Wren |
-    | x86-64-assembly | x86-64 Assembly |
+    USAGE:
+     exercism-track-downloader [global-options] command [command options] [arguments...]
+    
+    VERSION:
+     1.0
+    
+    COMMANDS:
+       tracks               List available tracks on Exercism
+       exercises            List and download exercises for each track
+    
+    GLOBAL OPTIONS:
+       -?, --help
     
 
 
@@ -161,7 +115,7 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks --slugs | grep "^c.*"
+!java -jar exercism-track-downloader.jar tracks --slugs | grep "^c.*"
 ```
 
     c
@@ -179,7 +133,7 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks --langs | grep ".*ML.*"
+!java -jar exercism-track-downloader.jar tracks --langs | grep ".*ML.*"
 ```
 
     CFML
@@ -191,7 +145,7 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks --search ".*L$"
+!java -jar exercism-track-downloader.jar tracks --search ".*L$"
 ```
 
     
@@ -213,7 +167,7 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar exercises --help
+!java -jar exercism-track-downloader.jar exercises --help
 ```
 
     NAME:
@@ -237,7 +191,7 @@ To execute commands below, copy-paste them to your terminal and remove the leadi
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar exercises --list plsql -l WebAssembly
+!java -jar exercism-track-downloader.jar exercises --list plsql -l WebAssembly
 ```
 
     ========= plsql =========
@@ -288,7 +242,7 @@ If one ore more tracks are not found it is skipped and a message is displayed
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar exercises --list plsql -l "Web Assembly"
+!java -jar exercism-track-downloader.jar exercises --list plsql -l "Web Assembly"
 ```
 
     
@@ -318,7 +272,7 @@ If one ore more tracks are not found it is skipped and a message is displayed
 
 
 ```python
-!java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar exercises --download plsql -d clojure
+!java -jar exercism-track-downloader.jar exercises --download plsql -d clojure
 ```
 
     
@@ -426,7 +380,7 @@ The execution time is slow partly due to Clojure's [slow loading time](http://cl
 
 
 ```python
-!time java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks --search "^.*c"
+!time java -jar exercism-track-downloader.jar tracks --search "^.*c"
 ```
 
     
@@ -438,12 +392,12 @@ The execution time is slow partly due to Clojure's [slow loading time](http://cl
     |           c |           C |
     | objective-c | Objective-C |
     
-    java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar tracks   5.07s user 0.38s system 79% cpu 6.878 total
+    java -jar exercism-track-downloader.jar tracks --search "^.*c"  4.71s user 0.28s system 121% cpu 4.119 total
 
 
 
 ```python
-!time java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar exercises --list plsql
+!time java -jar exercism-track-downloader.jar exercises --list plsql
 ```
 
     ========= plsql =========
@@ -462,5 +416,5 @@ The execution time is slow partly due to Clojure's [slow loading time](http://cl
     |     Rna Transcription |        easy | practice |
     |        Roman Numerals |        easy | practice |
     
-    java -jar target/uberjar/exercism-track-downloader-1.0-standalone.jar  --list  5.73s user 0.61s system 69% cpu 9.084 total
+    java -jar exercism-track-downloader.jar exercises --list plsql  5.13s user 0.28s system 108% cpu 4.971 total
 
