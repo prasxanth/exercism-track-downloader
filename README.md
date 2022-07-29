@@ -86,28 +86,74 @@ Execute commands below from within the root directory. Copy-paste them to your t
 
 
 ```python
-!java -jar exercism-track-downloader.jar --list
+!java -jar exercism-track-downloader.jar tracks --list
 ```
 
-    ** ERROR: **
-    Global option error: Unknown option: "--list"
+    
+    Retrieving tracks from https://exercism.io/tracks
     
     
-    NAME:
-     exercism-track-downloader - Application to download all exercises from Exercism for any track(s).
-    
-    USAGE:
-     exercism-track-downloader [global-options] command [command options] [arguments...]
-    
-    VERSION:
-     1.0
-    
-    COMMANDS:
-       tracks               List available tracks on Exercism
-       exercises            List and download exercises for each track
-    
-    GLOBAL OPTIONS:
-       -?, --help
+    |           :slug |           :lang |
+    |-----------------+-----------------|
+    |            abap |            ABAP |
+    |             awk |             AWK |
+    |            bash |            Bash |
+    |               c |               C |
+    |            cfml |            CFML |
+    |         clojure |         Clojure |
+    |   clojurescript |   ClojureScript |
+    |    coffeescript |    CoffeeScript |
+    |     common-lisp |     Common Lisp |
+    |             cpp |             C++ |
+    |         crystal |         Crystal |
+    |          csharp |              C# |
+    |               d |               D |
+    |            dart |            Dart |
+    |          delphi |   Delphi Pascal |
+    |          elixir |          Elixir |
+    |             elm |             Elm |
+    |      emacs-lisp |      Emacs Lisp |
+    |          erlang |          Erlang |
+    |         fortran |         Fortran |
+    |          fsharp |              F# |
+    |              go |              Go |
+    |          groovy |          Groovy |
+    |         haskell |         Haskell |
+    |            java |            Java |
+    |      javascript |      JavaScript |
+    |           julia |           Julia |
+    |          kotlin |          Kotlin |
+    |             lfe |             LFE |
+    |             lua |             Lua |
+    |            mips |   MIPS Assembly |
+    |             nim |             Nim |
+    |     objective-c |     Objective-C |
+    |           ocaml |           OCaml |
+    |           perl5 |          Perl 5 |
+    | pharo-smalltalk |           Pharo |
+    |             php |             PHP |
+    |           plsql |          PL/SQL |
+    |          prolog |          Prolog |
+    |      purescript |      PureScript |
+    |          python |          Python |
+    |               r |               R |
+    |          racket |          Racket |
+    |            raku |            Raku |
+    |        reasonml |        ReasonML |
+    |            ruby |            Ruby |
+    |            rust |            Rust |
+    |           scala |           Scala |
+    |          scheme |          Scheme |
+    |             sml |     Standard ML |
+    |           swift |           Swift |
+    |             tcl |             Tcl |
+    |      typescript |      TypeScript |
+    |          unison |          Unison |
+    |           vbnet |          VB.NET |
+    |       vimscript |      Vim script |
+    |            wasm |     WebAssembly |
+    |            wren |            Wren |
+    | x86-64-assembly | x86-64 Assembly |
     
 
 
