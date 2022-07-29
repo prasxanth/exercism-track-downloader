@@ -3,7 +3,7 @@
 `exercism-track-downloader` is a small Clojure (Java) CLI application to download all exercises for track(s) from [exercism.org](https://exercism.org/).
 
 ```sh
-exercism-track-downloader-0.1.0-standalone.jar [args]
+exercism-track-downloader-1.0-standalone.jar [args]
 ```
 
 Examples are provided in the [usage](#usage) section.
