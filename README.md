@@ -470,3 +470,43 @@ The startup time is slow due to Clojure's [slow loading time](http://clojure-goe
 ### Drip
 
 One option to significantly increase the speed of startup is by using an application like [drip](https://github.com/ninjudd/drip). 
+
+```bash
+!time drip -jar exercism-track-downloader.jar tracks --search "^.*c"
+```
+
+```
+Retrieving tracks from https://exercism.io/tracks
+
+
+|       :slug |       :lang |
+|-------------+-------------|
+|           c |           C |
+| objective-c | Objective-C |
+
+drip -jar exercism-track-downloader.jar tracks --search "^.*c"  0.06s user 0.08s system 61% cpu 0.225 total
+```
+
+```bash
+!time drip -jar exercism-track-downloader.jar exercises --list plsql
+```
+
+```
+========= plsql =========
+
+|                :title | :difficulty |    :type |
+|-----------------------+-------------+----------|
+|           Hello World |        easy | tutorial |
+|                Binary |        easy | practice |
+| Difference Of Squares |        easy | practice |
+|            Gigasecond |        easy | practice |
+|                Grains |        easy | practice |
+|               Hamming |        easy | practice |
+|                  Leap |        easy | practice |
+|             Nth Prime |        easy | practice |
+|             Raindrops |        easy | practice |
+|     Rna Transcription |        easy | practice |
+|        Roman Numerals |        easy | practice |
+
+drip -jar exercism-track-downloader.jar exercises --list plsql  0.06s user 0.08s system 15% cpu 0.879 total
+```
