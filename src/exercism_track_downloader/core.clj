@@ -180,14 +180,14 @@
 (defn ^{:doc "Download exercises for single track"
         :added "1.0"}
   download-track [track]
-  (let [commands (generate-exercise-download-commands track)
-        track-slug (get-track-slug track)]
+  (let [commands (generate-exercise-download-commands track)]
+    (->> ["\n" "=========" (get-track-slug track) "=========" "\n"] (str/join " ") println)
     (doseq [cmd commands
             :let [exercise-slug (-> cmd (subvec 3) first (str/split #"=") last)]
             :let [result (apply sh/sh cmd)]]
       (if (zero? (:exit result))
-       (println (format "Downloaded exercise <%s> for track <%s>" exercise-slug track-slug))
-       (println (format "You have not unlocked exercise <%s> for track <%s>" exercise-slug track-slug))))))
+       (println (format "Downloaded exercise <%s>" exercise-slug))
+       (println (format "You have not unlocked exercise <%s>" exercise-slug))))))
 
 #_(download-track "plsql")
 
