@@ -420,9 +420,11 @@ If one ore more tracks are not found it is skipped and a message is displayed
     
 
 
-## Warning!
+## Speeding up Execution
 
-The execution time is slow partly due to Clojure's [slow loading time](http://clojure-goes-fast.com/blog/clojures-slow-start/#:~:text=Clojure%20projects%20are%20slow%20to,the%20classes%20are%20loaded%20slowly.) and partly because data is retrieved directly from exercism.org and parsed every time the application is run.
+### (Slow) Time of Standalone Executable
+
+The startup time is slow due to Clojure's [slow loading time](http://clojure-goes-fast.com/blog/clojures-slow-start/#:~:text=Clojure%20projects%20are%20slow%20to,the%20classes%20are%20loaded%20slowly.). The execution time might be also be slow as data is retrieved directly from exercism.org and parsed every time the application is run.
 
 
 ```python
@@ -438,7 +440,7 @@ The execution time is slow partly due to Clojure's [slow loading time](http://cl
     |           c |           C |
     | objective-c | Objective-C |
     
-    java -jar exercism-track-downloader.jar tracks --search "^.*c"  4.71s user 0.28s system 121% cpu 4.119 total
+    java -jar exercism-track-downloader.jar tracks --search "^.*c"  4.32s user 0.21s system 106% cpu 4.268 total
 
 
 
@@ -462,5 +464,9 @@ The execution time is slow partly due to Clojure's [slow loading time](http://cl
     |     Rna Transcription |        easy | practice |
     |        Roman Numerals |        easy | practice |
     
-    java -jar exercism-track-downloader.jar exercises --list plsql  5.13s user 0.28s system 108% cpu 4.971 total
+    java -jar exercism-track-downloader.jar exercises --list plsql  4.71s user 0.25s system 112% cpu 4.414 total
 
+
+### Drip
+
+One option to significantly increase the speed of startup is by using an application like [drip](https://github.com/ninjudd/drip). 
