@@ -9,7 +9,8 @@
             [jsonista.core :as json]
             [clojure.pprint :as pp]
             [clojure.java.shell :as sh]
-            [cli-matic.core :as cli])
+            [cli-matic.core :as cli]
+            [jansi-clj.core :as jansi])
   (:gen-class))
 
 (def tracks-url (atom "https://exercism.io/tracks"))
@@ -158,9 +159,9 @@
         :added "1.0"}
   exercises-outstr [tracks]
   (let [{:keys [valid invalid]} (validate-tracks tracks)
-        invalid-msg "\n[%s] not found. See tracks for available options.\n\n"]
+        invalid-msg "\n[@|red,bold %s|@] not found. See tracks for available options.\n\n"]
      (->> (cond-> '[]
-           (some? invalid) (conj [(-> (format invalid-msg (str/join ", " invalid)))])
+           (some? invalid) (conj [(-> (jansi/renderf invalid-msg (str/join ", " invalid)))])
            (some? valid) (conj [(->> (map exercises->table valid) (str/join "\n"))]))
          flatten
          str/join)))
@@ -180,14 +181,15 @@
 (defn ^{:doc "Download exercises for single track"
         :added "1.0"}
   download-track [track]
-  (let [commands (generate-exercise-download-commands track)]
-    (->> ["\n" "=========" (get-track-slug track) "=========" "\n"] (str/join " ") println)
+  (let [commands (generate-exercise-download-commands track)
+        track-prnstr (->> track get-track-slug (jansi/renderf "@|yellow,bold %s|@"))]
+    (->> ["\n" "=========" track-prnstr "========="] (str/join " ") println)
     (doseq [cmd commands
             :let [exercise-slug (-> cmd (subvec 3) first (str/split #"=") last)]
             :let [result (apply sh/sh cmd)]]
       (if (zero? (:exit result))
-       (println (format "Downloaded exercise <%s>" exercise-slug))
-       (println (format "You have not unlocked exercise <%s>" exercise-slug))))))
+       (println (jansi/renderf "Downloaded exercise @|green,bold %s|@" exercise-slug))
+       (println (jansi/renderf "You have not unlocked exercise @|red,bold %s|@" exercise-slug))))))
 
 #_(download-track "plsql")
 

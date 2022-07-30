@@ -6,7 +6,8 @@
                  [hickory "0.7.1"]
                  [clj-http "3.12.3"]
                  [metosin/jsonista "0.3.6"]
-                 [cli-matic "0.5.3"]]
+                 [cli-matic "0.5.3"]
+                 [jansi-clj "1.0.1"]]
   :main ^:skip-aot exercism-track-downloader.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all

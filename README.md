@@ -292,7 +292,7 @@ If one ore more tracks are not found it is skipped and a message is displayed
 ```
 
     
-    [Web Assembly] not found. See tracks for available options.
+    [[31;1mWeb Assembly[m] not found. See tracks for available options.
     
     ========= plsql =========
     
@@ -322,101 +322,104 @@ If one ore more tracks are not found it is skipped and a message is displayed
 ```
 
     
-    Downloaded exercise <hello-world> for track <plsql>
-    You have not unlocked exercise <binary> for track <plsql>
-    You have not unlocked exercise <difference-of-squares> for track <plsql>
-    You have not unlocked exercise <gigasecond> for track <plsql>
-    You have not unlocked exercise <grains> for track <plsql>
-    You have not unlocked exercise <hamming> for track <plsql>
-    You have not unlocked exercise <leap> for track <plsql>
-    You have not unlocked exercise <nth-prime> for track <plsql>
-    You have not unlocked exercise <raindrops> for track <plsql>
-    You have not unlocked exercise <rna-transcription> for track <plsql>
-    You have not unlocked exercise <roman-numerals> for track <plsql>
-    Downloaded exercise <hello-world> for track <clojure>
-    Downloaded exercise <lucians-luscious-lasagna> for track <clojure>
-    Downloaded exercise <tracks-on-tracks-on-tracks> for track <clojure>
-    Downloaded exercise <bird-watcher> for track <clojure>
-    Downloaded exercise <cars-assemble> for track <clojure>
-    Downloaded exercise <interest-is-interesting> for track <clojure>
-    Downloaded exercise <annalyns-infiltration> for track <clojure>
-    Downloaded exercise <log-levels> for track <clojure>
-    Downloaded exercise <elyses-destructured-enchantments> for track <clojure>
-    Downloaded exercise <two-fer> for track <clojure>
-    Downloaded exercise <armstrong-numbers> for track <clojure>
-    Downloaded exercise <reverse-string> for track <clojure>
-    Downloaded exercise <accumulate> for track <clojure>
-    Downloaded exercise <acronym> for track <clojure>
-    Downloaded exercise <all-your-base> for track <clojure>
-    Downloaded exercise <anagram> for track <clojure>
-    Downloaded exercise <bob> for track <clojure>
-    Downloaded exercise <collatz-conjecture> for track <clojure>
-    Downloaded exercise <complex-numbers> for track <clojure>
-    Downloaded exercise <etl> for track <clojure>
-    Downloaded exercise <hamming> for track <clojure>
-    Downloaded exercise <nth-prime> for track <clojure>
-    Downloaded exercise <nucleotide-count> for track <clojure>
-    Downloaded exercise <pangram> for track <clojure>
-    Downloaded exercise <pig-latin> for track <clojure>
-    Downloaded exercise <protein-translation> for track <clojure>
-    Downloaded exercise <raindrops> for track <clojure>
-    Downloaded exercise <rna-transcription> for track <clojure>
-    Downloaded exercise <robot-name> for track <clojure>
-    Downloaded exercise <roman-numerals> for track <clojure>
-    Downloaded exercise <rotational-cipher> for track <clojure>
-    Downloaded exercise <run-length-encoding> for track <clojure>
-    Downloaded exercise <scrabble-score> for track <clojure>
-    Downloaded exercise <secret-handshake> for track <clojure>
-    Downloaded exercise <series> for track <clojure>
-    Downloaded exercise <space-age> for track <clojure>
-    Downloaded exercise <strain> for track <clojure>
-    Downloaded exercise <sublist> for track <clojure>
-    Downloaded exercise <sum-of-multiples> for track <clojure>
-    Downloaded exercise <triangle> for track <clojure>
-    Downloaded exercise <word-count> for track <clojure>
-    Downloaded exercise <atbash-cipher> for track <clojure>
-    Downloaded exercise <beer-song> for track <clojure>
-    Downloaded exercise <binary> for track <clojure>
-    Downloaded exercise <binary-search> for track <clojure>
-    Downloaded exercise <binary-search-tree> for track <clojure>
-    Downloaded exercise <change> for track <clojure>
-    Downloaded exercise <flatten-array> for track <clojure>
-    Downloaded exercise <gigasecond> for track <clojure>
-    Downloaded exercise <grade-school> for track <clojure>
-    Downloaded exercise <grains> for track <clojure>
-    Downloaded exercise <hexadecimal> for track <clojure>
-    Downloaded exercise <isbn-verifier> for track <clojure>
-    Downloaded exercise <isogram> for track <clojure>
-    Downloaded exercise <kindergarten-garden> for track <clojure>
-    Downloaded exercise <leap> for track <clojure>
-    Downloaded exercise <pascals-triangle> for track <clojure>
-    Downloaded exercise <perfect-numbers> for track <clojure>
-    Downloaded exercise <phone-number> for track <clojure>
-    Downloaded exercise <prime-factors> for track <clojure>
-    Downloaded exercise <proverb> for track <clojure>
-    Downloaded exercise <say> for track <clojure>
-    Downloaded exercise <trinary> for track <clojure>
-    Downloaded exercise <allergies> for track <clojure>
-    Downloaded exercise <crypto-square> for track <clojure>
-    Downloaded exercise <difference-of-squares> for track <clojure>
-    Downloaded exercise <dominoes> for track <clojure>
-    Downloaded exercise <largest-series-product> for track <clojure>
-    Downloaded exercise <meetup> for track <clojure>
-    Downloaded exercise <octal> for track <clojure>
-    Downloaded exercise <spiral-matrix> for track <clojure>
-    Downloaded exercise <clock> for track <clojure>
-    Downloaded exercise <diamond> for track <clojure>
-    Downloaded exercise <luhn> for track <clojure>
-    Downloaded exercise <sieve> for track <clojure>
-    Downloaded exercise <robot-simulator> for track <clojure>
-    Downloaded exercise <wordy> for track <clojure>
-    Downloaded exercise <bank-account> for track <clojure>
-    Downloaded exercise <matching-brackets> for track <clojure>
-    Downloaded exercise <minesweeper> for track <clojure>
-    Downloaded exercise <poker> for track <clojure>
-    Downloaded exercise <queen-attack> for track <clojure>
-    Downloaded exercise <go-counting> for track <clojure>
-    Downloaded exercise <pov> for track <clojure>
+     ========= [33;1mplsql[m =========
+    Downloaded exercise [32;1mhello-world[m
+    You have not unlocked exercise [31;1mbinary[m
+    You have not unlocked exercise [31;1mdifference-of-squares[m
+    You have not unlocked exercise [31;1mgigasecond[m
+    You have not unlocked exercise [31;1mgrains[m
+    You have not unlocked exercise [31;1mhamming[m
+    You have not unlocked exercise [31;1mleap[m
+    You have not unlocked exercise [31;1mnth-prime[m
+    You have not unlocked exercise [31;1mraindrops[m
+    You have not unlocked exercise [31;1mrna-transcription[m
+    You have not unlocked exercise [31;1mroman-numerals[m
+    
+     ========= [33;1mclojure[m =========
+    Downloaded exercise [32;1mhello-world[m
+    Downloaded exercise [32;1mlucians-luscious-lasagna[m
+    Downloaded exercise [32;1mtracks-on-tracks-on-tracks[m
+    Downloaded exercise [32;1mbird-watcher[m
+    Downloaded exercise [32;1mcars-assemble[m
+    Downloaded exercise [32;1minterest-is-interesting[m
+    Downloaded exercise [32;1mannalyns-infiltration[m
+    Downloaded exercise [32;1mlog-levels[m
+    Downloaded exercise [32;1melyses-destructured-enchantments[m
+    Downloaded exercise [32;1mtwo-fer[m
+    Downloaded exercise [32;1marmstrong-numbers[m
+    Downloaded exercise [32;1mreverse-string[m
+    Downloaded exercise [32;1maccumulate[m
+    Downloaded exercise [32;1macronym[m
+    Downloaded exercise [32;1mall-your-base[m
+    Downloaded exercise [32;1managram[m
+    Downloaded exercise [32;1mbob[m
+    Downloaded exercise [32;1mcollatz-conjecture[m
+    Downloaded exercise [32;1mcomplex-numbers[m
+    Downloaded exercise [32;1metl[m
+    Downloaded exercise [32;1mhamming[m
+    Downloaded exercise [32;1mnth-prime[m
+    Downloaded exercise [32;1mnucleotide-count[m
+    Downloaded exercise [32;1mpangram[m
+    Downloaded exercise [32;1mpig-latin[m
+    Downloaded exercise [32;1mprotein-translation[m
+    Downloaded exercise [32;1mraindrops[m
+    Downloaded exercise [32;1mrna-transcription[m
+    Downloaded exercise [32;1mrobot-name[m
+    Downloaded exercise [32;1mroman-numerals[m
+    Downloaded exercise [32;1mrotational-cipher[m
+    Downloaded exercise [32;1mrun-length-encoding[m
+    Downloaded exercise [32;1mscrabble-score[m
+    Downloaded exercise [32;1msecret-handshake[m
+    Downloaded exercise [32;1mseries[m
+    Downloaded exercise [32;1mspace-age[m
+    Downloaded exercise [32;1mstrain[m
+    Downloaded exercise [32;1msublist[m
+    Downloaded exercise [32;1msum-of-multiples[m
+    Downloaded exercise [32;1mtriangle[m
+    Downloaded exercise [32;1mword-count[m
+    Downloaded exercise [32;1matbash-cipher[m
+    Downloaded exercise [32;1mbeer-song[m
+    Downloaded exercise [32;1mbinary[m
+    Downloaded exercise [32;1mbinary-search[m
+    Downloaded exercise [32;1mbinary-search-tree[m
+    Downloaded exercise [32;1mchange[m
+    Downloaded exercise [32;1mflatten-array[m
+    Downloaded exercise [32;1mgigasecond[m
+    Downloaded exercise [32;1mgrade-school[m
+    Downloaded exercise [32;1mgrains[m
+    Downloaded exercise [32;1mhexadecimal[m
+    Downloaded exercise [32;1misbn-verifier[m
+    Downloaded exercise [32;1misogram[m
+    Downloaded exercise [32;1mkindergarten-garden[m
+    Downloaded exercise [32;1mleap[m
+    Downloaded exercise [32;1mpascals-triangle[m
+    Downloaded exercise [32;1mperfect-numbers[m
+    Downloaded exercise [32;1mphone-number[m
+    Downloaded exercise [32;1mprime-factors[m
+    Downloaded exercise [32;1mproverb[m
+    Downloaded exercise [32;1msay[m
+    Downloaded exercise [32;1mtrinary[m
+    Downloaded exercise [32;1mallergies[m
+    Downloaded exercise [32;1mcrypto-square[m
+    Downloaded exercise [32;1mdifference-of-squares[m
+    Downloaded exercise [32;1mdominoes[m
+    Downloaded exercise [32;1mlargest-series-product[m
+    Downloaded exercise [32;1mmeetup[m
+    Downloaded exercise [32;1moctal[m
+    Downloaded exercise [32;1mspiral-matrix[m
+    Downloaded exercise [32;1mclock[m
+    Downloaded exercise [32;1mdiamond[m
+    Downloaded exercise [32;1mluhn[m
+    Downloaded exercise [32;1msieve[m
+    Downloaded exercise [32;1mrobot-simulator[m
+    Downloaded exercise [32;1mwordy[m
+    Downloaded exercise [32;1mbank-account[m
+    Downloaded exercise [32;1mmatching-brackets[m
+    Downloaded exercise [32;1mminesweeper[m
+    Downloaded exercise [32;1mpoker[m
+    Downloaded exercise [32;1mqueen-attack[m
+    Downloaded exercise [32;1mgo-counting[m
+    Downloaded exercise [32;1mpov[m
     
 
 
@@ -440,7 +443,7 @@ The startup time is slow due to Clojure's [slow loading time](http://clojure-goe
     |           c |           C |
     | objective-c | Objective-C |
     
-    java -jar exercism-track-downloader.jar tracks --search "^.*c"  4.32s user 0.21s system 106% cpu 4.268 total
+    java -jar exercism-track-downloader.jar tracks --search "^.*c"  5.06s user 0.27s system 118% cpu 4.512 total
 
 
 
@@ -464,7 +467,7 @@ The startup time is slow due to Clojure's [slow loading time](http://clojure-goe
     |     Rna Transcription |        easy | practice |
     |        Roman Numerals |        easy | practice |
     
-    java -jar exercism-track-downloader.jar exercises --list plsql  4.71s user 0.25s system 112% cpu 4.414 total
+    java -jar exercism-track-downloader.jar exercises --list plsql  5.69s user 0.28s system 128% cpu 4.638 total
 
 
 ### Drip
