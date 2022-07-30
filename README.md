@@ -14,8 +14,6 @@ Examples are provided in the [usage](#usage) section.
 
 + Exercises must be *unlocked* to be *downloaded*. Locked exercises cannot be downloaded.
 
-+ All data is retrieved directly from website on each run so an internet connection is required.
-
 ## Installation
 
 Copy the `target/uberjar/exercism-track-downloader-<version>-standalone.jar` file to somewhere in your `PATH` and give it executable permissions.
@@ -26,6 +24,8 @@ Alternatively, Clojure developers can use the code or library  (`target/uberjar/
 ## Usage
 
 Execute commands below from within the root directory. Copy-paste them to your terminal and remove the leading `!` character. Note that `exercism-track-downloader.jar` is symlinked to `target/uberjar/exercism-track-downloader-1.0-standalone.jar`.
+
+> _Note_: All data is retrieved directly from [exercism.org](https://exercism.org/) on each run
 
 ### Help
 
