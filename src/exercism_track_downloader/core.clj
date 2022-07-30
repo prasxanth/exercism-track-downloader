@@ -186,8 +186,8 @@
             :let [exercise-slug (-> cmd (subvec 3) first (str/split #"=") last)]
             :let [result (apply sh/sh cmd)]]
       (if (zero? (:exit result))
-       (printf "\nDownloaded exercise <%s> for track <%s>" exercise-slug track-slug)
-       (printf "\nYou have not unlocked exercise <%s> for track <%s>" exercise-slug track-slug)))))
+       (println (format "Downloaded exercise <%s> for track <%s>" exercise-slug track-slug))
+       (println (format "You have not unlocked exercise <%s> for track <%s>" exercise-slug track-slug))))))
 
 #_(download-track "plsql")
 
@@ -206,7 +206,7 @@
   cli-opt-exercises [{:keys [list download]}]
   (cond
     (some? list) (-> list exercises-outstr println)
-    (some? download) (-> download download-tracks (str/join "\n") println)))
+    (some? download) (-> download download-tracks str/join println)))
 
 (def cli-config
   {:app         {:command     "exercism-track-downloader"
