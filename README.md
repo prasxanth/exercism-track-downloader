@@ -292,7 +292,7 @@ If one ore more tracks are not found it is skipped and a message is displayed
 ```
 
     
-    [[31;1mWeb Assembly[m] not found. See tracks for available options.
+    [Web Assembly] not found. See tracks for available options.
     
     ========= plsql =========
     
@@ -322,104 +322,104 @@ If one ore more tracks are not found it is skipped and a message is displayed
 ```
 
     
-     ========= [33;1mplsql[m =========
-    Downloaded exercise [32;1mhello-world[m
-    You have not unlocked exercise [31;1mbinary[m
-    You have not unlocked exercise [31;1mdifference-of-squares[m
-    You have not unlocked exercise [31;1mgigasecond[m
-    You have not unlocked exercise [31;1mgrains[m
-    You have not unlocked exercise [31;1mhamming[m
-    You have not unlocked exercise [31;1mleap[m
-    You have not unlocked exercise [31;1mnth-prime[m
-    You have not unlocked exercise [31;1mraindrops[m
-    You have not unlocked exercise [31;1mrna-transcription[m
-    You have not unlocked exercise [31;1mroman-numerals[m
+     ========= plsql =========
+    Downloaded exercise hello-world
+    You have not unlocked exercise binary
+    You have not unlocked exercise difference-of-squares
+    You have not unlocked exercise gigasecond
+    You have not unlocked exercise grains
+    You have not unlocked exercise hamming
+    You have not unlocked exercise leap
+    You have not unlocked exercise nth-prime
+    You have not unlocked exercise raindrops
+    You have not unlocked exercise rna-transcription
+    You have not unlocked exercise roman-numerals
     
-     ========= [33;1mclojure[m =========
-    Downloaded exercise [32;1mhello-world[m
-    Downloaded exercise [32;1mlucians-luscious-lasagna[m
-    Downloaded exercise [32;1mtracks-on-tracks-on-tracks[m
-    Downloaded exercise [32;1mbird-watcher[m
-    Downloaded exercise [32;1mcars-assemble[m
-    Downloaded exercise [32;1minterest-is-interesting[m
-    Downloaded exercise [32;1mannalyns-infiltration[m
-    Downloaded exercise [32;1mlog-levels[m
-    Downloaded exercise [32;1melyses-destructured-enchantments[m
-    Downloaded exercise [32;1mtwo-fer[m
-    Downloaded exercise [32;1marmstrong-numbers[m
-    Downloaded exercise [32;1mreverse-string[m
-    Downloaded exercise [32;1maccumulate[m
-    Downloaded exercise [32;1macronym[m
-    Downloaded exercise [32;1mall-your-base[m
-    Downloaded exercise [32;1managram[m
-    Downloaded exercise [32;1mbob[m
-    Downloaded exercise [32;1mcollatz-conjecture[m
-    Downloaded exercise [32;1mcomplex-numbers[m
-    Downloaded exercise [32;1metl[m
-    Downloaded exercise [32;1mhamming[m
-    Downloaded exercise [32;1mnth-prime[m
-    Downloaded exercise [32;1mnucleotide-count[m
-    Downloaded exercise [32;1mpangram[m
-    Downloaded exercise [32;1mpig-latin[m
-    Downloaded exercise [32;1mprotein-translation[m
-    Downloaded exercise [32;1mraindrops[m
-    Downloaded exercise [32;1mrna-transcription[m
-    Downloaded exercise [32;1mrobot-name[m
-    Downloaded exercise [32;1mroman-numerals[m
-    Downloaded exercise [32;1mrotational-cipher[m
-    Downloaded exercise [32;1mrun-length-encoding[m
-    Downloaded exercise [32;1mscrabble-score[m
-    Downloaded exercise [32;1msecret-handshake[m
-    Downloaded exercise [32;1mseries[m
-    Downloaded exercise [32;1mspace-age[m
-    Downloaded exercise [32;1mstrain[m
-    Downloaded exercise [32;1msublist[m
-    Downloaded exercise [32;1msum-of-multiples[m
-    Downloaded exercise [32;1mtriangle[m
-    Downloaded exercise [32;1mword-count[m
-    Downloaded exercise [32;1matbash-cipher[m
-    Downloaded exercise [32;1mbeer-song[m
-    Downloaded exercise [32;1mbinary[m
-    Downloaded exercise [32;1mbinary-search[m
-    Downloaded exercise [32;1mbinary-search-tree[m
-    Downloaded exercise [32;1mchange[m
-    Downloaded exercise [32;1mflatten-array[m
-    Downloaded exercise [32;1mgigasecond[m
-    Downloaded exercise [32;1mgrade-school[m
-    Downloaded exercise [32;1mgrains[m
-    Downloaded exercise [32;1mhexadecimal[m
-    Downloaded exercise [32;1misbn-verifier[m
-    Downloaded exercise [32;1misogram[m
-    Downloaded exercise [32;1mkindergarten-garden[m
-    Downloaded exercise [32;1mleap[m
-    Downloaded exercise [32;1mpascals-triangle[m
-    Downloaded exercise [32;1mperfect-numbers[m
-    Downloaded exercise [32;1mphone-number[m
-    Downloaded exercise [32;1mprime-factors[m
-    Downloaded exercise [32;1mproverb[m
-    Downloaded exercise [32;1msay[m
-    Downloaded exercise [32;1mtrinary[m
-    Downloaded exercise [32;1mallergies[m
-    Downloaded exercise [32;1mcrypto-square[m
-    Downloaded exercise [32;1mdifference-of-squares[m
-    Downloaded exercise [32;1mdominoes[m
-    Downloaded exercise [32;1mlargest-series-product[m
-    Downloaded exercise [32;1mmeetup[m
-    Downloaded exercise [32;1moctal[m
-    Downloaded exercise [32;1mspiral-matrix[m
-    Downloaded exercise [32;1mclock[m
-    Downloaded exercise [32;1mdiamond[m
-    Downloaded exercise [32;1mluhn[m
-    Downloaded exercise [32;1msieve[m
-    Downloaded exercise [32;1mrobot-simulator[m
-    Downloaded exercise [32;1mwordy[m
-    Downloaded exercise [32;1mbank-account[m
-    Downloaded exercise [32;1mmatching-brackets[m
-    Downloaded exercise [32;1mminesweeper[m
-    Downloaded exercise [32;1mpoker[m
-    Downloaded exercise [32;1mqueen-attack[m
-    Downloaded exercise [32;1mgo-counting[m
-    Downloaded exercise [32;1mpov[m
+     ========= clojure =========
+    Downloaded exercise hello-world
+    Downloaded exercise lucians-luscious-lasagna
+    Downloaded exercise tracks-on-tracks-on-tracks
+    Downloaded exercise bird-watcher
+    Downloaded exercise cars-assemble
+    Downloaded exercise interest-is-interesting
+    Downloaded exercise annalyns-infiltration
+    Downloaded exercise log-levels
+    Downloaded exercise elyses-destructured-enchantments
+    Downloaded exercise two-fer
+    Downloaded exercise armstrong-numbers
+    Downloaded exercise reverse-string
+    Downloaded exercise accumulate
+    Downloaded exercise acronym
+    Downloaded exercise all-your-base
+    Downloaded exercise anagram
+    Downloaded exercise bob
+    Downloaded exercise collatz-conjecture
+    Downloaded exercise complex-numbers
+    Downloaded exercise etl
+    Downloaded exercise hamming
+    Downloaded exercise nth-prime
+    Downloaded exercise nucleotide-count
+    Downloaded exercise pangram
+    Downloaded exercise pig-latin
+    Downloaded exercise protein-translation
+    Downloaded exercise raindrops
+    Downloaded exercise rna-transcription
+    Downloaded exercise robot-name
+    Downloaded exercise roman-numerals
+    Downloaded exercise rotational-cipher
+    Downloaded exercise run-length-encoding
+    Downloaded exercise scrabble-score
+    Downloaded exercise secret-handshake
+    Downloaded exercise series
+    Downloaded exercise space-age
+    Downloaded exercise strain
+    Downloaded exercise sublist
+    Downloaded exercise sum-of-multiples
+    Downloaded exercise triangle
+    Downloaded exercise word-count
+    Downloaded exercise atbash-cipher
+    Downloaded exercise beer-song
+    Downloaded exercise binary
+    Downloaded exercise binary-search
+    Downloaded exercise binary-search-tree
+    Downloaded exercise change
+    Downloaded exercise flatten-array
+    Downloaded exercise gigasecond
+    Downloaded exercise grade-school
+    Downloaded exercise grains
+    Downloaded exercise hexadecimal
+    Downloaded exercise isbn-verifier
+    Downloaded exercise isogram
+    Downloaded exercise kindergarten-garden
+    Downloaded exercise leap
+    Downloaded exercise pascals-triangle
+    Downloaded exercise perfect-numbers
+    Downloaded exercise phone-number
+    Downloaded exercise prime-factors
+    Downloaded exercise proverb
+    Downloaded exercise say
+    Downloaded exercise trinary
+    Downloaded exercise allergies
+    Downloaded exercise crypto-square
+    Downloaded exercise difference-of-squares
+    Downloaded exercise dominoes
+    Downloaded exercise largest-series-product
+    Downloaded exercise meetup
+    Downloaded exercise octal
+    Downloaded exercise spiral-matrix
+    Downloaded exercise clock
+    Downloaded exercise diamond
+    Downloaded exercise luhn
+    Downloaded exercise sieve
+    Downloaded exercise robot-simulator
+    Downloaded exercise wordy
+    Downloaded exercise bank-account
+    Downloaded exercise matching-brackets
+    Downloaded exercise minesweeper
+    Downloaded exercise poker
+    Downloaded exercise queen-attack
+    Downloaded exercise go-counting
+    Downloaded exercise pov
     
 
 
