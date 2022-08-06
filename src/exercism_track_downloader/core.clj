@@ -1,6 +1,6 @@
-(ns ^{:doc "Application to download all exercises from Exercism for any track(s)."
-      :author "Prashanth Kumar"}
-    exercism-track-downloader.core
+(ns exercism-track-downloader.core
+  "Application to download all exercises from Exercism for any track(s)."
+  {:author "Prashanth Kumar"}
   (:require [clojure.string :as str]
             [clojure.set :as cset]
             [hickory.core :as html]
@@ -15,9 +15,9 @@
 
 (def tracks-url (atom "https://exercism.io/tracks"))
 
-(defn ^{:doc "Returns hash-map of programming languages and corresponding URL abbreviations (slugs)."
-        :added "1.0"}
-  get-tracks []
+(defn get-tracks []
+  "Returns hash-map of programming languages and corresponding URL abbreviations (slugs)."
+  {:added "1.0"}
   (->> @tracks-url
       slurp
       (re-seq #"<a href=\"/tracks/.*<\/a>")
@@ -25,54 +25,54 @@
       (mapcat #(remove #{"a href" "/a" ""} %))
       (apply hash-map)))
 
-(defn ^{:doc "Applies function to values of hash-map collection."
-        :private true
-        :added "1.0"}
-  map-kv [f coll]
+(defn map-kv [f coll]
+  "Applies function to values of hash-map collection."
+  {:private true
+   :added "1.0"}
   (reduce-kv (fn [m k v] (assoc m k (f v))) (empty coll) coll))
 
 (def tracks (->> (get-tracks) (map-kv str/lower-case) atom))
 
-(defn ^{:doc "Returns true if track is available in Exercism. The check for track is case-insensitive."
-        :added "1.0"}
-  track? [track]
+(defn track? [track]
+  "Returns true if track is available in Exercism. The check for track is case-insensitive."
+  {:added "1.0"}
   (->> @tracks (into #{} cat) (#(contains? % (str/lower-case track)))))
 
-(defn ^{:doc "Returns a map of valid and invalid tracks. A track is valid if it is available in Exercism."
-        :added "1.0"}
-  validate-tracks [tracks]
+(defn validate-tracks [tracks]
+  "Returns a map of valid and invalid tracks. A track is valid if it is available in Exercism."
+  {:added "1.0"}
   (-> (group-by track? tracks) (cset/rename-keys {true :valid false :invalid})))
 
-(defn ^{:doc "Gets URL name for track"
-        :added "1.0"}
-  get-track-slug [track]
+(defn get-track-slug [track]
+  "Gets URL name for track"
+  {:added "1.0"}
   (let [track-lower (str/lower-case track)]
    (->> @tracks
         (keep (fn [[k v]] (when (or (= k track-lower) (= v track-lower)) k)))
         first)))
 
-(defn ^{:doc "Returns the exercises URL for a track."
-        :added "1.0"}
-  make-exercise-url [track]
+(defn make-exercise-url [track]
+  "Returns the exercises URL for a track."
+  {:added "1.0"}
   (->> track get-track-slug (format "https://exercism.org/tracks/%s/exercises")))
 
-(defn ^{:doc "Get exercises html page for track and parses to hickory format."
-        :private true
-        :added "1.0"}
-  parse-exercise-html [track]
+(defn parse-exercise-html [track]
+  "Get exercises html page for track and parses to hickory format."
+  {:private true
+   :added "1.0"}
   (-> (-> track make-exercise-url http/get) :body html/parse html/as-hickory))
 
-(defn ^{:doc "Selects div element from hickory format of exercises html page."
-        :private true
-        :added "1.0"}
-  select-exercises-div [parsed-exercise-url]
+(defn select-exercises-div [parsed-exercise-url]
+  "Selects div element from hickory format of exercises html page."
+  {:private true
+   :added "1.0"}
   (->> parsed-exercise-url
        (html.pick/select (html.pick/child (html.pick/class "exercises")
                                           (html.pick/tag :div)))))
 
-(defn ^{:doc "Returns JSON data for track from exercises html page."
-        :added "1.0"}
-  get-exercises [track]
+(defn get-exercises [track]
+  "Returns JSON data for track from exercises html page."
+  {:added "1.0"}
   (->> track
        parse-exercise-html
        select-exercises-div
@@ -81,9 +81,9 @@
        (#(json/read-value % json/keyword-keys-object-mapper))
        :request :options :initial_data :exercises))
 
-(defn ^{:doc "Retrieves the :slug key from exercises for a given track."
-        :added "1.0"}
-  get-exercises-slug [track]
+(defn get-exercises-slug [track]
+  "Retrieves the :slug key from exercises for a given track."
+  {:added "1.0"}
   (->> track get-exercises (map :slug)))
 
 ;;==============================================================================
@@ -92,16 +92,18 @@
 
 (def exercism-tracks (atom (get-tracks)))
 
-(defn ^{:doc "Identical to re-matches but takes regex as string."
-        :added "1.0"}
-  rx-matches [regex string]
+(defn rx-matches [regex string]
+  "Identical to re-matches but takes regex as string."
+  {:added "1.0"}
   (re-matches (re-pattern regex) string))
 
 #_(keep (partial rx-matches "^c.*") (keys @exercism-tracks))
 
-(defmulti ^{:doc "Multimethod to keep tracks matching a regular expression. Dispatch is based on class of `tracks`."
-            :added "1.0"}
-  grep-tracks (fn [regex tracks] [(class regex) (class tracks)]))
+(defmulti grep-tracks
+  "Multimethod to keep tracks matching a regular expression.
+  Dispatch is based on class of `tracks`."
+  {:added "1.0"}
+  (fn [regex tracks] [(class regex) (class tracks)]))
 
 (defmethod grep-tracks [String clojure.lang.ISeq]
   [regex tracks]
@@ -117,17 +119,17 @@
 
 #_(grep-tracks ".*L$" @exercism-tracks)
 
-(defn ^{:doc "Table of slug and language for tracks."
-        :added "1.0"}
- tracks->table [tracks]
+(defn tracks->table [tracks]
+ "Table of slug and language for tracks."
+ {:added "1.0"}
  (as-> tracks it
        (into (sorted-map) it)
        (mapv #(hash-map :slug %1 :lang %2) (keys it) (vals it))
        (with-out-str (pp/print-table [:slug :lang] it))))
 
-(defn ^{:doc "tracks option for CLI."
-        :added "1.0"}
-  tracks-outstr [{:keys [list slugs langs search]}]
+(defn tracks-outstr [{:keys [list slugs langs search]}]
+  "tracks option for CLI."
+  {:added "1.0"}
   (let [retrieve-msg (-> ["\nRetrieving tracks from " @tracks-url "\n"] str/join format)
         make-outstr (fn [x] (str/join "\n" [retrieve-msg x]))]
        (cond
@@ -141,9 +143,9 @@
 
 (def cli-opt-tracks tracks-outstr)
 
-(defn ^{:doc "Formatted-table with exercises, difficulty and type columns for a track."
-        :added "1.0"}
-  exercises->table [track]
+(defn exercises->table [track]
+  "Formatted-table with exercises, difficulty and type columns for a track."
+  {:added "1.0"}
   (-> '[]
      (conj [(str/join " " ["=========" (get-track-slug track) "========="])])
      (conj [(->> track
@@ -155,9 +157,9 @@
 
 #_(print-exercises-table "Clojure")
 
-(defn ^{:doc "exercises --list option for CLI."
-        :added "1.0"}
-  exercises-outstr [tracks]
+(defn exercises-outstr [tracks]
+  "exercises --list option for CLI."
+  {:added "1.0"}
   (let [{:keys [valid invalid]} (validate-tracks tracks)
         invalid-msg "\n[@|red,bold %s|@] not found. See tracks for available options.\n\n"]
      (->> (cond-> '[]
@@ -168,9 +170,9 @@
 
 #_(print-exercises ["Clojure" "awk"])
 
-(defn ^{:doc "Generate command for input to sh."
-        :added "1.0"}
-  generate-exercise-download-commands [track]
+(defn generate-exercise-download-commands [track]
+  "Generate command for input to sh."
+  {:added "1.0"}
   (let [exercises-slug (get-exercises-slug track)
         track-slug (->> track get-track-slug (format "--track=%s"))]
       (map #(vector "exercism" "download" track-slug (str/join ["--exercise=" %]))
@@ -178,9 +180,9 @@
 
 #_(generate-exercise-download-commands "PL/SQL")
 
-(defn ^{:doc "Download exercises for single track"
-        :added "1.0"}
-  download-track [track]
+(defn download-track [track]
+  "Download exercises for single track"
+  {:added "1.0"}
   (let [commands (generate-exercise-download-commands track)
         track-prnstr (->> track get-track-slug (jansi/renderf "@|yellow,bold %s|@"))]
     (->> ["\n" "=========" track-prnstr "========="] (str/join " ") println)
@@ -193,9 +195,9 @@
 
 #_(download-track "plsql")
 
-(defn ^{:doc "Download exercises for multiple tracks"
-        :added "1.0"}
-  download-tracks [tracks]
+(defn download-tracks [tracks]
+  "Download exercises for multiple tracks"
+  {:added "1.0"}
   (->> tracks
        (map get-track-slug)
        distinct
@@ -203,14 +205,15 @@
 
 #_(download-tracks ["plsql" "PL/SQL"])
 
-(defn ^{:doc "exercises option for CLI"
-        :added "1.0"}
-  cli-opt-exercises [{:keys [list download]}]
+(defn cli-opt-exercises [{:keys [list download]}]
+  "exercises option for CLI"
+  {:added "1.0"}
   (cond
     (some? list) (-> list exercises-outstr println)
     (some? download) (-> download download-tracks str/join println)))
 
 (def cli-config
+  "Configuration for `run-cmd`"
   {:app         {:command     "exercism-track-downloader"
                  :description "Application to download all exercises from Exercism for any track(s)."
                  :version     "1.0"}
