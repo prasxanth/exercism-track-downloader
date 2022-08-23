@@ -16,14 +16,14 @@ Examples are provided in the [usage](#usage) section.
 
 ## Installation
 
-Copy the `target/uberjar/exercism-track-downloader-<version>-standalone.jar` file to somewhere in your `PATH` and give it executable permissions.
+Copy the `target/default+uberjar/exercism-track-downloader-<version>-standalone.jar` file to somewhere in your `PATH` and give it executable permissions.
 
-Alternatively, Clojure developers can use the code or library  (`target/uberjar/exercism-track-downloader-<version>.jar`) directly.
+Alternatively, Clojure developers can use the code or library  (`target/default+uberjar/exercism-track-downloader-<version>.jar`) directly.
 
 
 ## Usage
 
-Execute commands below from within the root directory. Copy-paste them to your terminal and remove the leading `!` character. Note that `exercism-track-downloader.jar` is symlinked to `target/uberjar/exercism-track-downloader-1.0-standalone.jar`.
+Execute commands below from within the root directory. Copy-paste them to your terminal and remove the leading `!` character. Note that `exercism-track-downloader.jar` is symlinked to `target/default+uberjar/exercism-track-downloader-1.0-standalone.jar`.
 
 > _Note_: All data is retrieved directly from [exercism.org](https://exercism.org/) on each run
 
@@ -102,6 +102,7 @@ Execute commands below from within the root directory. Copy-paste them to your t
     |            cfml |            CFML |
     |         clojure |         Clojure |
     |   clojurescript |   ClojureScript |
+    |           cobol |           COBOL |
     |    coffeescript |    CoffeeScript |
     |     common-lisp |     Common Lisp |
     |             cpp |             C++ |
@@ -140,6 +141,7 @@ Execute commands below from within the root directory. Copy-paste them to your t
     |          racket |          Racket |
     |            raku |            Raku |
     |        reasonml |        ReasonML |
+    |             red |             Red |
     |            ruby |            Ruby |
     |            rust |            Rust |
     |           scala |           Scala |
@@ -168,6 +170,7 @@ Execute commands below from within the root directory. Copy-paste them to your t
     cfml
     clojure
     clojurescript
+    cobol
     coffeescript
     common-lisp
     cpp
@@ -201,6 +204,7 @@ Execute commands below from within the root directory. Copy-paste them to your t
     |    :slug |       :lang |
     |----------+-------------|
     |     cfml |        CFML |
+    |    cobol |       COBOL |
     |    plsql |      PL/SQL |
     | reasonml |    ReasonML |
     |      sml | Standard ML |
@@ -323,7 +327,7 @@ If one ore more tracks are not found it is skipped and a message is displayed
 
     
      ========= plsql =========
-    Downloaded exercise hello-world
+    You have not unlocked exercise hello-world
     You have not unlocked exercise binary
     You have not unlocked exercise difference-of-squares
     You have not unlocked exercise gigasecond
@@ -411,16 +415,6 @@ If one ore more tracks are not found it is skipped and a message is displayed
     Downloaded exercise diamond
     Downloaded exercise luhn
     Downloaded exercise sieve
-    Downloaded exercise robot-simulator
-    Downloaded exercise wordy
-    Downloaded exercise bank-account
-    Downloaded exercise matching-brackets
-    Downloaded exercise minesweeper
-    Downloaded exercise poker
-    Downloaded exercise queen-attack
-    Downloaded exercise go-counting
-    Downloaded exercise pov
-    
 
 
 ## Speeding up Execution
@@ -434,41 +428,10 @@ The startup time is slow due to Clojure's [slow loading time](http://clojure-goe
 !time java -jar exercism-track-downloader.jar tracks --search "^.*c"
 ```
 
-    
-    Retrieving tracks from https://exercism.io/tracks
-    
-    
-    |       :slug |       :lang |
-    |-------------+-------------|
-    |           c |           C |
-    | objective-c | Objective-C |
-    
-    java -jar exercism-track-downloader.jar tracks --search "^.*c"  5.06s user 0.27s system 118% cpu 4.512 total
-
-
 
 ```python
 !time java -jar exercism-track-downloader.jar exercises --list plsql
 ```
-
-    ========= plsql =========
-    
-    |                :title | :difficulty |    :type |
-    |-----------------------+-------------+----------|
-    |           Hello World |        easy | tutorial |
-    |                Binary |        easy | practice |
-    | Difference Of Squares |        easy | practice |
-    |            Gigasecond |        easy | practice |
-    |                Grains |        easy | practice |
-    |               Hamming |        easy | practice |
-    |                  Leap |        easy | practice |
-    |             Nth Prime |        easy | practice |
-    |             Raindrops |        easy | practice |
-    |     Rna Transcription |        easy | practice |
-    |        Roman Numerals |        easy | practice |
-    
-    java -jar exercism-track-downloader.jar exercises --list plsql  5.69s user 0.28s system 128% cpu 4.638 total
-
 
 ### Drip
 
