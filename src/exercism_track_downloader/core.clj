@@ -13,17 +13,17 @@
             [jansi-clj.core :as jansi])
   (:gen-class))
 
-(def tracks-url (atom "https://exercism.io/tracks"))
+(def ^:dynamic *tracks-url* "https://exercism.io/tracks")
 
 (defn get-tracks []
   "Returns hash-map of programming languages and corresponding URL abbreviations (slugs)."
   {:added "1.0"}
-  (->> @tracks-url
-      slurp
-      (re-seq #"<a href=\"/tracks/.*<\/a>")
-      (map #(str/split % #"<|>|=|\"|/tracks/"))
-      (mapcat #(remove #{"a href" "/a" ""} %))
-      (apply hash-map)))
+  (->> *tracks-url*
+       slurp
+       (re-seq #"<a href=\"/tracks/.*<\/a>")
+       (map #(str/split % #"<|>|=|\"|/tracks/"))
+       (mapcat #(remove #{"a href" "/a" ""} %))
+       (apply hash-map)))
 
 (defn map-kv [f coll]
   "Applies function to values of hash-map collection."
@@ -31,12 +31,12 @@
    :added "1.0"}
   (reduce-kv (fn [m k v] (assoc m k (f v))) (empty coll) coll))
 
-(def tracks (->> (get-tracks) (map-kv str/lower-case) atom))
+(def ^:dynamic *tracks* (map-kv str/lower-case (get-tracks)))
 
 (defn track? [track]
   "Returns true if track is available in Exercism. The check for track is case-insensitive."
   {:added "1.0"}
-  (->> @tracks (into #{} cat) (#(contains? % (str/lower-case track)))))
+  (->> *tracks* (into #{} cat) (#(contains? % (str/lower-case track)))))
 
 (defn validate-tracks [tracks]
   "Returns a map of valid and invalid tracks. A track is valid if it is available in Exercism."
@@ -47,7 +47,7 @@
   "Gets URL name for track"
   {:added "1.0"}
   (let [track-lower (str/lower-case track)]
-   (->> @tracks
+   (->> *tracks*
         (keep (fn [[k v]] (when (or (= k track-lower) (= v track-lower)) k)))
         first)))
 
@@ -90,14 +90,14 @@
 ;; CLI
 ;;==============================================================================
 
-(def exercism-tracks (atom (get-tracks)))
+(def ^:dynamic *exercism-tracks* (get-tracks))
 
 (defn rx-matches [regex string]
   "Identical to re-matches but takes regex as string."
   {:added "1.0"}
   (re-matches (re-pattern regex) string))
 
-#_(keep (partial rx-matches "^c.*") (keys @exercism-tracks))
+#_(keep (partial rx-matches "^c.*") (keys *exercism-tracks*))
 
 (defmulti grep-tracks
   "Multimethod to keep tracks matching a regular expression.
@@ -109,7 +109,7 @@
   [regex tracks]
   (keep (partial rx-matches regex) tracks))
 
-#_(grep-tracks "^c.*" (keys @exercism-tracks))
+#_(grep-tracks "^c.*" (keys *exercism-tracks*))
 
 (defmethod grep-tracks [String clojure.lang.PersistentHashMap]
   [regex tracks]
@@ -117,7 +117,7 @@
                      (hash-map k v)))
         tracks))
 
-#_(grep-tracks ".*L$" @exercism-tracks)
+#_(grep-tracks ".*L$" *exercism-tracks*)
 
 (defn tracks->table [tracks]
  "Table of slug and language for tracks."
@@ -130,13 +130,13 @@
 (defn tracks-outstr [{:keys [list slugs langs search]}]
   "tracks option for CLI."
   {:added "1.0"}
-  (let [retrieve-msg (-> ["\nRetrieving tracks from " @tracks-url "\n"] str/join format)
+  (let [retrieve-msg (-> ["\nRetrieving tracks from " *tracks-url* "\n"] str/join format)
         make-outstr (fn [x] (str/join "\n" [retrieve-msg x]))]
        (cond
-         (true? list) (->> @exercism-tracks tracks->table make-outstr)
-         (true? slugs) (->> @exercism-tracks keys sort (str/join "\n") make-outstr)
-         (true? langs) (->> @exercism-tracks vals sort (str/join "\n") make-outstr)
-         (some? search) (->> @exercism-tracks
+         (true? list) (->> *exercism-tracks* tracks->table make-outstr)
+         (true? slugs) (->> *exercism-tracks* keys sort (str/join "\n") make-outstr)
+         (true? langs) (->> *exercism-tracks* vals sort (str/join "\n") make-outstr)
+         (some? search) (->> *exercism-tracks*
                              (grep-tracks search)
                              tracks->table
                              make-outstr))))
